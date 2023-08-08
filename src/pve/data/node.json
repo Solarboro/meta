@@ -1,0 +1,53 @@
+{
+    "data": [
+        {
+            "cpu": 0,
+            "netout": 0,
+            "diskwrite": 0,
+            "uptime": 0,
+            "maxdisk": 107374182400,
+            "status": "stopped",
+            "diskread": 0,
+            "maxmem": 4294967296,
+            "netin": 0,
+            "name": "CentOS",
+            "cpus": 1,
+            "mem": 0,
+            "disk": 0,
+            "vmid": 101
+        },
+        {
+            "pid": 71342,
+            "cpu": 0.382245505801296,
+            "netout": 154613192,
+            "uptime": 2974,
+            "diskwrite": 0,
+            "maxdisk": 85899345920,
+            "status": "running",
+            "diskread": 0,
+            "maxmem": 12884901888,
+            "netin": 476259010,
+            "name": "super",
+            "cpus": 4,
+            "mem": 11576319080,
+            "disk": 0,
+            "vmid": 800
+        },
+        {
+            "name": "DS3617",
+            "cpus": 4,
+            "mem": 0,
+            "vmid": 801,
+            "disk": 0,
+            "maxmem": 3221225472,
+            "diskread": 0,
+            "netin": 0,
+            "maxdisk": 52428800,
+            "status": "stopped",
+            "netout": 0,
+            "diskwrite": 0,
+            "uptime": 0,
+            "cpu": 0
+        }
+    ]
+}

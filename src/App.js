@@ -3,6 +3,7 @@ import './App.css';
 import { App as AntApp, ConfigProvider } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { useState } from 'react';
+import PvePanel from './pve';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
         }
       >
         <AntApp>
-
+          <PvePanel />
         </AntApp>
       </ConfigProvider>
       
