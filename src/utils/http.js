@@ -2,6 +2,7 @@ import axios from "axios";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { message } from "antd";
+nProgress.configure({showSpinner: false});
 
 const http = axios.create({
     // baseURL: process.env.REACT_APP_BE_API,
