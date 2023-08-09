@@ -22,21 +22,30 @@ function PvePanel() {
             }
         },
         {
-            label: '福田',
+            label: '福田-1',
             value: '2',
             data: {
-                host: '192.168.0.40:1180',
+                host: '192.168.0.40:1181',
                 node: 'pve',
                 token: 'PVEAPIToken=root@pam!webApp=69eefd75-ac8f-45d8-b36d-8e91ffca33bf'
             }
         },
         {
-            label: '戴斯勒',
+            label: '福田-2',
             value: '3',
             data: {
-                host: '',
-                node: '',
-                token: ''
+                host: '192.168.0.40:1181',
+                node: 'qibang',
+                token: 'PVEAPIToken=root@pam!webApp=436a5255-05ac-4ea3-8ca1-586d41b10acc'
+            }
+        },
+        {
+            label: '戴斯勒',
+            value: '4',
+            data: {
+                host: '192.168.30.210:1181',
+                node: 'ZSXGD',
+                token: 'PVEAPIToken=root@pam!webApp=eb9fd4a4-9df6-459d-9fe9-39fa35794fe0'
             }
         },
     ]
@@ -118,7 +127,7 @@ function PvePanel() {
         
        
 
-            <Divider>概要</Divider>
+            <Divider>在线机器: {rep?.data?.filter(item=>item.status === 'running').length || 0}</Divider>
 
             {pveError && <Alert message={`链接失败 服务找不到`} type="error" />}      
             
@@ -129,12 +138,12 @@ function PvePanel() {
                 
                 <Radio.Group defaultValue={selectOptionDefault} value={selectOptionDefault} onChange={raidoChange} buttonStyle="solid">
                     <Radio.Button value='1'>罗湖</Radio.Button>
-                    <Radio.Button value='2'>福田</Radio.Button>
-                    <Radio.Button value='3'>翠亨</Radio.Button>
+                    <Radio.Button value='2'>福田 - 1</Radio.Button>
+                    <Radio.Button value='3'>福田 - 2</Radio.Button>
+                    <Radio.Button value='4'>翠亨</Radio.Button>
                 </Radio.Group>
         
             </Space>
-
 
         {
             rep?.data.sort((a,b)=>a.vmid - b.vmid).map(
