@@ -18,6 +18,7 @@ http.interceptors.request.use(
     config => {
 
         //
+        if(!config.url.match('pve'))
         nProgress.start();
 
     
@@ -43,25 +44,25 @@ http.interceptors.response.use(
         //
         nProgress.done();
 
-        if(error?.response?.status !== 200){
+        // if(error?.response?.status !== 200){
 
-            switch (error?.response?.status) {
-                case 403:
-                    message.warning("请重新登录 !").then(()=>{
-                        // userStore.logout();
-                        // window.location.href = "/";
-                    })
+        //     switch (error?.response?.status) {
+        //         case 403:
+        //             message.warning("请重新登录 !").then(()=>{
+        //                 // userStore.logout();
+        //                 // window.location.href = "/";
+        //             })
                     
-                    break;
+        //             break;
             
-                default:
-                    if(error?.response )
-                        message.error(error?.response?.data?.message)
-                    else
-                        message.error(`请检查网络连接 ${error.message}`)
-                    break;
-            }
-        }
+        //         default:
+        //             if(error?.response )
+        //                 message.error(error?.response?.data?.message)
+        //             else
+        //                 message.error(`请检查网络连接 ${error.message}`)
+        //             break;
+        //     }
+        // }
      
         return Promise.reject(error);
     }
