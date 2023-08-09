@@ -83,7 +83,9 @@ function PvePanel() {
         ()=> {
 
            if(selectOptionDefault){
-            setMyInter(setInterval(()=>getData(selectOptions.filter(entity=> entity.value === selectOptionDefault)[0].data), 2000))
+            let data = selectOptions.filter(entity=> entity.value === selectOptionDefault)[0].data;
+            setMyInter(setInterval(()=>getData(data), 2000))
+            setPveEntity(data)
            }
             
         },
@@ -117,6 +119,10 @@ function PvePanel() {
         console.info(data)
         
     }
+
+    const getUrl = () => {
+        window.location.href = `https://${pveEntity.host}`
+    }
     return (
 
         <>
@@ -129,7 +135,9 @@ function PvePanel() {
 
             <Divider>在线机器: {rep?.data?.filter(item=>item.status === 'running').length || 0}</Divider>
 
-            {pveError && <Alert message={`链接失败 服务找不到`} type="error" />}      
+
+            {pveError && <Alert onClick={()=>getUrl()} message={<a>链接出错 点击证书信任</a>} type="error" />}     
+             
             
             <Space style={{display:'flex', flexDirection: 'row-reverse'}}>
 

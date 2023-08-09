@@ -2,13 +2,14 @@ import axios from "axios";
 import nProgress from "nprogress";
 import "nprogress/nprogress.css";
 import { message } from "antd";
-const https = require('https');
+import https from 'https'
 nProgress.configure({showSpinner: false});
 
 const http = axios.create({
     // baseURL: process.env.REACT_APP_BE_API,
     
     httpAgent: new https.Agent({rejectUnauthorized: false}),
+    httpsAgent: new https.Agent({rejectUnauthorized: false}),
     headers: {
         Authorization: 'PVEAPIToken=root@pam!abcdefgh=eee0a9ca-16c9-44aa-a2a4-853a4844f760'
     }
