@@ -136,7 +136,7 @@ function PvePanel() {
             <Divider>在线机器: {rep?.data?.filter(item=>item.status === 'running').length || 0}</Divider>
 
 
-            {pveError && <Alert onClick={()=>getUrl()} message={<a>链接出错 点击证书信任</a>} type="error" />}     
+            {pveError && <Alert  message='链接出错 点击证书信任' type="error" />}     
              
             
             <Space style={{display:'flex', flexDirection: 'row-reverse'}}>
