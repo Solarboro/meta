@@ -25,7 +25,7 @@ function PvePanel() {
             label: '福田-1',
             value: '2',
             data: {
-                host: '192.168.0.40:1181',
+                host: process.env.REACT_APP_API_HOST,
                 node: 'pve',
                 token: 'PVEAPIToken=root@pam!webApp=69eefd75-ac8f-45d8-b36d-8e91ffca33bf'
             }
@@ -34,7 +34,7 @@ function PvePanel() {
             label: '福田-2',
             value: '3',
             data: {
-                host: '192.168.0.40:1181',
+                host: process.env.REACT_APP_API_HOST,
                 node: 'qibang',
                 token: 'PVEAPIToken=root@pam!webApp=436a5255-05ac-4ea3-8ca1-586d41b10acc'
             }
@@ -43,7 +43,7 @@ function PvePanel() {
             label: '戴斯勒',
             value: '4',
             data: {
-                host: '192.168.30.210:1181',
+                host: process.env.REACT_APP_API_HOST,
                 node: 'ZSXGD',
                 token: 'PVEAPIToken=root@pam!webApp=eb9fd4a4-9df6-459d-9fe9-39fa35794fe0'
             }
