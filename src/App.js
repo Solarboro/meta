@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import { App as AntApp, ConfigProvider, Space } from 'antd';
+import { App as AntApp, ConfigProvider, Divider, Space } from 'antd';
 import zhCN from 'antd/locale/zh_CN';
 import { useState } from 'react';
 import { HashRouter, Link, Route, Routes } from 'react-router-dom';
@@ -42,6 +42,7 @@ function App() {
               <Link to='Accounts'>账户</Link>
             </Space>
 
+          <Divider/>
             <Routes>
 
               <Route path='login' element={<LoginPage/>}></Route>

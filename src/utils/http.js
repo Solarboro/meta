@@ -4,10 +4,11 @@ import "nprogress/nprogress.css";
 import { message } from "antd";
 
 const http = axios.create({
-    // baseURL: process.env.REACT_APP_BE_API,
+    baseURL: process.env.REACT_APP_API_DOMAIN,
     
     headers: {
-        Authorization: 'PVEAPIToken=root@pam!abcdefgh=eee0a9ca-16c9-44aa-a2a4-853a4844f760'
+        
+        Authorization: JSON.parse(localStorage.getItem("accountInfo"))?.token || null
     }
     // timeout: 3000
 });
@@ -66,4 +67,4 @@ http.interceptors.response.use(
     }
 )
 
-export default http
+export default http;
