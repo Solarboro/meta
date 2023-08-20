@@ -6,10 +6,10 @@ import { message } from "antd";
 const http = axios.create({
     baseURL: process.env.REACT_APP_API_DOMAIN,
     
-    headers: {
+    // headers: {
         
-        Authorization: JSON.parse(localStorage.getItem("accountInfo"))?.token || null
-    }
+    //     Authorization: JSON.parse(localStorage.getItem("accountInfo"))?.token || null
+    // }
     // timeout: 3000
 });
 
